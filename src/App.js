@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Navbar from './components/Navbar';
 import Indonesia from './pages/Indonesia';
@@ -18,6 +18,7 @@ const App = () => {
           <Route path="/programming" element={<Programming />} />
           <Route path="/saved" element={<Saved />} />
           <Route path="/search" element={<SearchResults />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
     </Provider>
